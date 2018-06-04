@@ -1,0 +1,48 @@
+<h4 class="titulo">{{title}}</h4>
+
+
+
+    <div class="row">
+        <div class="center col s12 m4 offset-m4 espacio">
+            <p class="light texto">Si no eres socio, pero quieres que la Asociación Harlista de España te notifique por correo electrónico todos los eventos. Hazte Amigo de la AHE</p>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+            <div class="col s2 m4"></div>
+              <div class="col s12 m4 caja_login ">
+                
+                <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+                    <div class='row'>
+                          <div class='input-field col s12'>
+                          <i class="material-icons prefix">account_circle</i>
+                          <input class='form-control' type="email" name="email" #email="ngModel" [(ngModel)]="amigo.email"  required pattern="[a-zñ0-9._%+-]+@[a-zñ0-9.-]+\.[a-z]{2,4}$"/>
+                          <label for='email'>email</label>
+                          <span class="aviso" *ngIf="!email.valid && email.touched">
+                              El email no es correcto
+                          </span>
+                          </div>
+                      </div>
+          
+
+              <br />
+              
+                  <div class='row'>
+                   <button class="col s12 btn btn-large waves-effect orange" type="submit" name="action">SER AMIGO</button>
+                  </div>
+        
+                  <div class="row">
+                    <div class="card-content red-text" *ngIf="status == 'error'">
+                          <p>El email ya esta registrado</p>
+                      </div>
+                      </div>
+              
+              </form>
+        
+        
+              
+        
+        </div>
+        

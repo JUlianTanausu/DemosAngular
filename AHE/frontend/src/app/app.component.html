@@ -1,0 +1,59 @@
+<!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+  
+  <li><a [routerLink]="['edit']">Editar</a></li>
+  <li class="divider"></li>
+  <li><a (click)="logout()" >Salir</a></li>
+</ul>
+
+<!-- Dropdown Structure -->
+<ul id="dropdown2" class="dropdown-content" >
+  
+  <li *ngFor="let seccion of seccions" ><a [routerLink]="[seccion.name]">{{seccion.name}}</a></li>
+  
+</ul>
+
+<nav>
+  <div class="nav-wrapper blue-grey darken-3">
+      <img [routerLink]="['home']"  class="logo_ahe" src="../assets/logo.png">
+    <a  [routerLink]="['home']"  class="brand-logo" >AHE</a>
+    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+      <li><a [routerLink]="['amigo']" >Amigo</a></li>
+      <li><a href="" >Tienda</a></li>
+      <li><a href="">Noticias</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown2" *ngIf="identity">Secciones<i class="material-icons right">arrow_drop_down</i></a></li>
+      <li><a [routerLink]="['login']"*ngIf="!identity" >Login</a></li>
+       <!-- Dropdown Trigger -->
+       <li><a class="dropdown-button" href="#!" data-activates="dropdown1" *ngIf="identity">{{identity.name}}<i class="material-icons right">arrow_drop_down</i></a></li>
+    </ul>
+    <ul class="side-nav" id="mobile-demo">
+      
+      <li><a href="badges.html">Noticias</a></li>
+      <li><a href="collapsible.html">Secciones</a></li>
+      <li><a href="mobile.html">Mobile</a></li>
+         
+    </ul>
+  </div>
+</nav>
+
+<div class="fixed-action-btn horizontal" *ngIf="identity && identity.role == 'ROLE_ADMIN'">
+  <a class="btn-floating btn-large red pulse">
+    <i class="large material-icons">add</i>
+  </a>
+  <ul>
+    <li><a class="btn-floating red" a [routerLink]="['register']" ><i class="material-icons">person</i></a></li>
+    <li><a class="btn-floating yellow darken-1" [routerLink]="['list']"><i class="material-icons">visibility</i></a></li>
+    <li><a class="btn-floating green" [routerLink]="['evento']"><i class="material-icons">event</i></a></li>
+    
+  </ul>
+</div>
+
+
+<router-outlet></router-outlet>
+
+
+
+
+
+

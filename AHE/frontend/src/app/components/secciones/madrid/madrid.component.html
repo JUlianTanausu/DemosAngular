@@ -1,0 +1,124 @@
+<div class="row">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s3"><a class="active" href="#test1">home</a></li>
+        <li class="tab col s3"><a  href="#test2">Eventos</a></li>
+        <li class="tab col s3"><a href="#test3">Calendario</a></li>
+        <li class="tab col s3"><a href="#test4">Socios</a></li>
+      </ul>
+    </div>
+    <div id="test1" class="col s12 m12">
+      
+          <h2 class="titulo"> Seccion Madrid - {{count}} socios</h2>
+          <br>
+          
+                  
+
+          
+        
+   
+     
+
+      
+     
+           
+                
+          
+      
+      
+       
+
+
+    </div>
+    <div id="test2" class="col s12">Test 2</div>
+    <div id="test3" class="col s12">
+        <h2 class="titulo"> Calendario</h2>
+      
+        <div class="col s12 m6 offset-m3">
+        <ul class="collapsible popout" data-collapsible="accordion">
+            <li>
+              <div class="collapsible-header"><i class="material-icons">event</i>ENERO</div>
+              <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+            <li>
+              <div class="collapsible-header"><i class="material-icons">event</i>FEBRERO</div>
+              <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+            <li>
+              <div class="collapsible-header"><i class="material-icons">event</i>MARZO</div>
+              <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+            <li>
+            <div class="collapsible-header"><i class="material-icons">event</i>ABRIL</div>
+            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">event</i>MAYO</div>
+            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">event</i>JUNIO</div>
+            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">event</i>JULIO</div>
+            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">event</i>AGOSTO</div>
+            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">event</i>SEPTIEMBRE</div>
+            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">event</i>OCTUBRE</div>
+            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">event</i>NOVIEMBRE</div>
+            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">event</i>DICIEMBRE</div>
+            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+          </li>
+          </ul>
+        </div>
+        
+    </div>
+
+
+
+    <div id="test4" class="col s12">
+        <h2 class="titulo"> Listado socios</h2>
+
+        <div class="col s12 m6 offset-m3">
+        <ul class="collection">
+            <li *ngFor="let user of users"  class="collection-item avatar">
+              <h4 class="num">{{user.num}}</h4>
+              <span class="title">{{user.name}}</span>
+              <p>{{user.nick}}</p>
+              <p>moto</p>
+              <a class="btn-floating btn-large waves-effect waves-light  secondary-content2" ><i class="material-icons left">visibility</i></a>
+
+
+             
+         
+             
+             
+            </li>
+            
+          </ul>
+
+          </div>
+
+
+
+    </div>
+</div>
+        
+
+
+

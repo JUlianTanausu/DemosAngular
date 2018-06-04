@@ -1,0 +1,119 @@
+<h3 class="titulo">{{title}}</h3>
+
+<div class="row">
+    <div class="col s2 m4"></div>
+      <div class="col s12 m4 caja_login ">
+        
+        <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+            <div class='row'>
+                  <div class='input-field col s12'>
+                  <i class="material-icons prefix">account_circle</i>
+                  <input class='form-control' type="text" name="name" #name="ngModel" [(ngModel)]="evento.name"  required />
+                  <label for='name'>name</label>
+                  <span class="aviso" *ngIf="!name.valid && name.touched">
+                      El nombre es obligatorio
+                  </span>
+                  </div>
+              </div>
+  
+              <div class="row">
+                
+                  
+                    <div class="input-field col s12">
+                      <i class="material-icons prefix">mode_edit</i>
+                      <textarea id="icon_prefix2" class="materialize-textarea" type="text" name="descripcion" #descripcion="ngModel" [(ngModel)]="evento.descripcion"  required></textarea>
+                      <label for="icon_prefix2">Descripcion</label>
+                      <span class="aviso" *ngIf="!descripcion.valid && descripcion.touched">
+                        La descripcion es obligatoria
+                      </span>
+                    </div>
+                  
+                
+              </div>
+
+
+              <div class='row'>
+                <div class='input-field col s12'>
+                <i class="material-icons prefix">pin_drop</i>
+                <input class='form-control' type="text" name="lugar" #lugar="ngModel" [(ngModel)]="evento.lugar"  required />
+                <label for='name'>Lugar de encuentro</label>
+                <span class="aviso" *ngIf="!lugar.valid && lugar.touched">
+                    El lugar es obligatorio
+                </span>
+                </div>
+            </div>
+
+            <div class='row'>
+                <div class='input-field col s12'>
+                <i class="material-icons prefix">insert_invitation</i>
+                
+                <input class='datepicker' id="fecha" type="text" name="date" #date="ngModel" [(ngModel)]="evento.date" />
+                <label for='date'>fecha</label>
+                <span class="aviso" *ngIf="!date.valid && date.touched">
+                    La fecha es obligatorioa
+                </span>
+                </div>
+            </div>
+
+
+
+            <div class='row'>
+                <div class='input-field col s12'>
+                <i class="material-icons prefix">access_time
+                </i>
+                
+                <input class='timepicker' id="hora" type="text" name="hora" #hora="ngModel" [(ngModel)]="evento.hora" />
+              
+                <span class="aviso" *ngIf="!hora.valid && hora.touched">
+                    La hora es obligatorioa
+                </span>
+                </div>
+            </div>
+
+
+            <div class='row'>
+                    
+                   
+                    
+                    <div class=" input-field col s12">
+                            <i class="material-icons prefix">location_on</i>
+                                <select id="seccion"  materialize="material_select" class="form-control"  required>
+                                        <option value="" disabled selected>Selecciona seccion</option>
+            
+                                    <option *ngFor="let seccion of seccions" [value]="seccion.name">{{seccion.name}}</option>
+                                    
+                                </select>
+                                <label>Seccion</label>
+                            </div>
+                        </div>
+
+
+            
+  
+      <br />
+      
+          <div class='row'>
+          <button class="col s12 btn btn-large waves-effect orange" type="submit" name="action">PUBLICAR</button>
+          </div>
+
+        
+
+          <div class="row">
+
+            <div class="card-content red-text" *ngIf="status == 'error'">
+             
+               
+                  
+                  <p>No te has podido identificar, intente de nuevo</p>
+                
+                
+             
+              </div>
+              </div>
+      
+      </form>
+
+
+      
+
+</div>

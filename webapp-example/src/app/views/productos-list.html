@@ -1,0 +1,37 @@
+<h3>{{titulo}}</h3>
+<hr>
+
+<div *ngIf="!productos">
+    Cargando listado de productos...
+</div>
+<div *ngIf="productos">
+    <div class="row">
+        <div class="col-lg-3" *ngFor="let producto of productos"><!-- LET: crea variable -->
+            <div class="thumbail">
+                <div *ngIf="producto.imagen" class="imagen_container">
+                    <img src="http://localhost:8888/Angular_backend/uploads/{{producto.imagen}}" 
+                     class="producto_imagen" /><!-- Class="producto_imagen" img-responsive-->
+                </div>
+                <div *ngIf="!producto.imagen">
+                    <div class="imagen-relleno">
+
+                    </div>
+                </div>
+                <div class="caption">
+                    <h3>{{producto.nombre}}</h3>
+                    <p>{{producto.precio}} €</p>
+                    <div class="botones" *ngIf="confirmado != producto.id">
+                        <a [routerLink]="['/producto', producto.id]" class="btn btn-md btn-primary">Ver</a>
+                        <a [routerLink]="['/editar-producto', producto.id]" class="btn btn-md btn-warning">Editar</a>
+                        <a (click)="borrarConfirm(producto.id)" class="btn btn-md btn-danger">Borrar</a>
+                    </div>
+                    <div class="seguro" *ngIf="confirmado == producto.id">
+                        <a (click)="onDeleteProducto(producto.id)" class="btn btn-md btn-danger">Quiero eliminarlo</a>
+                        <a (click)="cancelarConfirm()" class="btn btn-md btn-warning">Cancelar</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

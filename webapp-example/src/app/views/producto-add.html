@@ -1,0 +1,41 @@
+<h3>{{titulo}}</h3>
+<hr/>
+<!-- # pal nombre 
+    ngForm: para k sepa, k es un Form de Angular
+-->
+<form #formproducto="ngForm" (ngSubmit)="onSubmit()" class="col-lg-6" id="form-producto">
+
+    <label>
+        Nombre
+        <span  *ngIf="!nombre.valid && nombre.touched" class="label label-danger">El nombre es Obligatorio</span><!-- el nombre ha sido tocado -->        
+    </label>
+    <input type="text" #nombre="ngModel" name="nombre" [(ngModel)]="producto.nombre" class="form-control" required><!-- ngmodel: k va estar modificandose con el modelo -->
+
+
+    <label>
+        Descripcion
+        <span  *ngIf="!descripcion.valid && descripcion.touched" class="label label-danger">La descripcion es Obligatorio</span><!-- el nombre ha sido tocado -->            
+    </label>
+    <textarea #descripcion="ngModel" name="descripcion" [(ngModel)]="producto.descripcion" type="text" class="form-control" required></textarea>
+
+    <label>
+        Precio
+        <span  *ngIf="!precio.valid && precio.touched" class="label label-danger">El precio no es Correcto</span><!-- el nombre ha sido tocado -->            
+        
+    </label>
+    <input type="text" #precio="ngModel" name="precio" [(ngModel)]="producto.precio" class="form-control" required pattern="[0-9]+">
+
+    <label>Imagen</label>
+    <div *ngIf="is_edit">
+            <img src="http://localhost:8888/Angular_backend/uploads/{{producto.imagen}}" 
+            class="img-responsive" /><!-- Class="producto_imagen" -->
+        </div>
+    <input type="file" class="form-control" (change)="fileChangeEvent($event)">
+    
+    <br>
+
+    <input type="submit" value="{{titulo}}" [disabled]="!formproducto.form.valid" class="btn btn-success">
+
+
+
+</form>

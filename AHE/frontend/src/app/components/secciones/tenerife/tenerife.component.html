@@ -1,0 +1,213 @@
+
+<div class="row">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s3"><a class="active" href="#test1">home</a></li>
+        <li class="tab col s3"><a  href="#test2">Eventos</a></li>
+        <li class="tab col s3"><a href="#test3">Calendario</a></li>
+        <li class="tab col s3"><a href="#test4">Socios</a></li>
+      </ul>
+    </div>
+    <div id="test1" class="col s12 m12">
+      
+          <h2 class="titulo"> Seccion Tenerife - {{count}} socios</h2>
+          <br>
+      
+    </div>
+    <div id="test2" >
+        <h2 class="titulo col s12 m12"> Eventos </h2>
+         
+
+
+          <div class="col s12 m6 l3" *ngFor="let event of events">
+          <div class="row" >  
+                  
+              <div class="card">
+                <div class="card-image waves-effect waves-block waves-light">      
+                  <img class="activator" src="{{ url + 'get-image-evento/' + event.image}}" *ngIf="event.image">
+                  <img class="activator" src="assets/logog.png" *ngIf="!event.image">
+                </div>
+                <div class="card-content">
+                  <span class="card-title activator grey-text text-darken-4">{{event.name}}<i class="material-icons right">more_vert</i></span>
+                  <p><a >{{event.date}}</a></p>
+                  <div *ngIf="identity && identity.role == 'ROLE_ADMIN'" class="botones" >
+                    <a class="waves-effect waves-light btn modal-trigger orange" href="#editar" (click)="editarModal(event)"><i class="material-icons2 ">create</i></a>
+                    
+                    <!-- Modal Trigger -->
+                    <a class="waves-effect waves-light btn modal-trigger red" href="#borrar" (click)="borrarModal(event)"><i class="material-icons2 ">delete</i></a>
+                  </div>
+                </div>
+               
+                <div class="card-reveal">
+                  <span class="card-title grey-text text-darken-4">{{event.name}}<i class="material-icons right">close</i></span>
+                  <p class="break-word">{{event.descripcion}}</p>
+                  <p class="break-word">Lugar de encuentro: {{event.lugar}}</p>      
+                </div>  
+              </div>
+          </div>
+          </div>  
+          
+
+<!-- Modal Structure -->
+
+<div id="borrar" class="modal">
+  <div class="modal-content">
+    <h4>Eliminar: {{nameEventoBorrar}}</h4>
+    <p>¿Está seguro que desea eliminar el evento?</p>
+  </div>
+  <div class="modal-footer">
+    <a  class="modal-action modal-close waves-effect waves-green btn-flat" (click)="eliminar()">Eliminar</a>
+  </div>
+</div>
+
+<!-- Modal Structure -->
+
+<div id="editar" class="modal">
+  <div class="modal-content">
+    <h4>Editar: {{nameEventoEditar}} </h4>
+    
+  
+      <div class='row'>
+            <div class='input-field col s12'>
+            <i class="material-icons prefix">account_circle</i>
+            <input  id="name" type="text" name="name" #name="ngModel" [(ngModel)]="eventoActualizar.name"  required class="letraEdit">
+            
+            <span class="aviso" *ngIf="!name.valid && name.touched">
+              El nombre es obligatorio
+            </span>
+            </div>
+        </div>
+
+        <div class="row">
+                
+                  
+          <div class="input-field col s12">
+            <i class="material-icons prefix">mode_edit</i>
+            <textarea id="descripcion" class="materialize-textarea letraEdit" type="text" name="descripcion" #descripcion="ngModel" [(ngModel)]="eventoActualizar.descripcion"  required></textarea>
+            <span class="aviso" *ngIf="!descripcion.valid && descripcion.touched">
+              La descripcion es obligatoria
+            </span>
+          </div>
+    </div>
+
+    <div class='row'>
+      <div class='input-field col s12'>
+      <i class="material-icons prefix">pin_drop</i>
+      <input class='form-control letraEdit' id="lugar" type="text" name="lugar" #lugar="ngModel" [(ngModel)]="eventoActualizar.lugar"  required />
+      <span class="aviso" *ngIf="!lugar.valid && lugar.touched">
+          El lugar es obligatorio
+      </span>
+      </div>
+  </div>
+
+
+  <div class='row'>
+    <div class='input-field col s12'>
+    <i class="material-icons prefix">insert_invitation</i>
+    
+    <input class='datepicker letraEdit' id="fecha" type="text" name="date" #date="ngModel" [(ngModel)]="eventoActualizar.date" />
+    
+    <span class="aviso" *ngIf="!date.valid && date.touched">
+        La fecha es obligatorioa
+    </span>
+    </div>
+</div>
+
+
+        <div class='row'>
+          <div class='input-field col s12'>
+          <i class="material-icons prefix">access_time
+          </i>
+          <input value="{{eventoActualizar.hora}}" class='timepicker letraEdit' id="hora" type="text" name="hora" #hora="ngModel" [(ngModel)]="eventoActualizar.hora" />  
+          <span class="aviso" *ngIf="!hora.valid && hora.touched">
+            La hora es obligatorioa
+        </span>  
+          </div>
+      </div>
+
+      <div class='row'>
+          
+        <div class="file-field input-field">
+          <div class="btn orange">
+            <span>File</span>
+            
+            <input type="file"  (change)="fileChangeEvent($event)">
+          </div>
+          <div class="file-path-wrapper">
+            <input id="imagen"  class="file-path validate color" type="text" placeholder="Subir imagen">
+            
+          </div>
+        </div>
+        
+    </div>
+
+   
+
+
+
+  </div>
+  <div class="modal-footer">
+    <a  class="modal-action modal-close waves-effect waves-green btn-flat" (click)="actualizar()">Actualizar</a>
+  </div>
+</div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+    <div id="test3" class="col s12 l6 offset-l3">
+        <h2 class="titulo"> Calendario</h2>
+
+
+
+        <iframe src="https://calendar.google.com/calendar/b/3/embed?mode=AGENDA&amp;height=600&amp;wkst=2&amp;bgcolor=%23ffffff&amp;src=ahetenerife%40gmail.com&amp;color=%231B887A&amp;ctz=America%2FNew_York" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+        
+     
+
+
+
+
+
+
+      
+  </div>
+
+
+
+    <div id="test4" class="col s12">
+        <h2 class="titulo"> Listado socios</h2>
+
+        <div class="col s12 m6 offset-m3">
+        <ul class="collection">
+            <li *ngFor="let user of users"  class="collection-item avatar">
+              <h4 class="num">{{user.num}}</h4>
+              <span class="title">{{user.name}}</span>
+              <p>{{user.nick}}</p>
+              <p>moto</p>
+              <a [routerLink]="['/detail']" class="btn-floating btn-large waves-effect waves-light  secondary-content2" ><i (click)="detail(user._id)" class="material-icons left">visibility</i></a>
+
+
+             
+             
+             
+             
+            </li>
+            
+          </ul>
+
+          </div>
+
+
+
+    </div>
+</div>
+        
+
+
+

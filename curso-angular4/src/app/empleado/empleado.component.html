@@ -1,0 +1,89 @@
+<h3 style="color:blue;">
+    {{titulo}}
+</h3>
+
+<strong>Empleado estrella:</strong>
+<br>
+<br>
+
+<!-- IF -->
+<div *ngIf="trabajador_externo == true">
+    <button (click)="cambiarExterno(false)">Mostrar Empleado</button>
+    <ul>
+        <li>{{trabajadores[0].nombre}}</li>
+        <li>{{trabajadores[0].edad}}</li>
+        <li>{{trabajadores[0].cargo}}</li>
+        <li *ngIf="trabajadores[0].contratado == true">Esta contratado</li>
+        <li *ngIf="trabajadores[0].contratado == false">No esta contratado</li>
+    </ul>
+</div>
+
+<div *ngIf="trabajador_externo == false">
+    <button (click)="cambiarExterno(true)">Mostrar trabajador</button>
+    <ul *ngIf="trabajador_externo == false">
+        <li>{{empleado.nombre}}</li>
+        <li>{{empleado.edad}}</li>
+        <li>{{empleado.cargo}}</li>
+        <li *ngIf="empleado.contratado == true">Esta contratado</li>
+        <li *ngIf="empleado.contratado == false">No esta contratado</li>
+    </ul>
+</div>
+
+<hr>
+
+<h3>Listado de empleados</h3>
+<ul>
+    <li *ngFor="let empleado of trabajadores; let i = index">
+        <strong>Empleado {{i+1}}:</strong>
+        <ul>
+                <li>{{empleado.nombre}}</li>
+                <li>{{empleado.edad}}</li>
+                <li>{{empleado.cargo}}</li>
+                <li *ngIf="empleado.contratado == true">Esta contratado</li>
+                <li *ngIf="empleado.contratado == false">No esta contratado</li>
+        </ul>
+    </li>
+</ul>
+
+<hr>
+
+<h3>Colores switch</h3>
+
+<!--   SWITCH CASE -->
+<ul [ngSwitch]="color"> <!-- propiedad color -->
+    <li *ngSwitchCase="'red'"[ngStyle]="{background:color, color: 'white', padding: '20px'}">Es de color ROJO</li> <!-- se pone comilla simple xk es string -->
+    <li *ngSwitchCase="'green'"[ngStyle]="{background:color, color: 'white', padding: '20px'}">Es de color VERDE</li> <!-- se pone comilla simple xk es string -->
+    <li *ngSwitchCase="'blue'"[ngStyle]="{background:color, color: 'white', padding: '20px'}">Es de color AZUL</li> <!-- se pone comilla simple xk es string -->
+    
+
+</ul>
+
+
+<hr>
+
+<h3>Selector de colores: </h3>
+<button (click)="logColorSeleccionado()">MOSTRAR LOG</button>
+<!-- ngMoldel: k propiedad vamos a modificar ccuando se escriba en input -->
+<!-- PARENTESIS: modifica databinding -->
+<input type="text" [(ngModel)]="color_seleccionado"/>
+<!-- letra grande siempre se ejecutara -->
+<pre 
+    [style.border] = "color_seleccionado == 'red' ? '5px solid black' : '1px solid green'"
+    [ngClass]="{
+        fondoAzul: color_seleccionado == 'blue',
+        fondoVerde: color_seleccionado == 'green',
+        letraGrande: 1==1 
+    }"
+    
+>
+<!-- [ngClass]="['fondoAzul', 'letraGrande']"   asi estos estilos siempre se ejecutan -->
+
+
+    <strong>Color elegido:</strong>
+    {{color_seleccionado}}
+</pre>
+<div [ngStyle]="{'background':color_seleccionado,'width':'200px','height':'200px','float':'right','margin-right': '69%'}">
+
+</div>
+<div style="clear:both"></div>
+

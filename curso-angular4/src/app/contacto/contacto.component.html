@@ -1,0 +1,11 @@
+<h2>{{titulo}}</h2>
+
+<div *ngIf="parametro">
+Parametro de ka url: {{parametro}}
+</div>
+
+<div *ngIf="!parametro">
+    <button (click)="redirigir()">Ir a la pagina con parametro </button>
+    <button (click)="redirigirDos()">Ir a la home </button>
+
+</div>

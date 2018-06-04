@@ -1,0 +1,91 @@
+#content{
+    margin-top:30px;
+    border-radius: 2px;
+    background: white;
+    box-shadow: 0px 2px 5px #ccc;
+    padding: 0px;
+    overflow: hidden;
+}
+
+#header{
+    background: #E03137;
+    color:white;
+    margin: 0px;
+    height: 90px;
+    line-height: 90px;
+}
+
+#header h1{
+    padding-top: 25px;
+    display: block;
+    line-height: 50px;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+#nav{
+    background: rgba(211, 49, 57, 0.67);
+}
+
+#nav ul{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+ #nav li{
+    display: inline;   
+}
+
+#nav ul li a{
+    text-decoration: none;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: all 300ms; 
+    
+}
+
+#nav ul li a:hover{
+    background: rgba(211, 49, 57, 0.67);
+}
+
+.activado{
+    border-bottom: 4px solid yellow;
+}
+
+#main .jumbotron{
+    padding: 50px;
+    margin-top: 30px;
+    border-radius: 5px;
+}
+
+#footer{
+    margin-top: 30px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+    color: gray;
+}
+
+#form-producto label{
+    margin-top: 10px;
+}
+
+.imagen_container{
+    width: 100px;
+    overflow: hidden;
+}
+
+.producto_imagen{
+    height: 200px;
+    margin: 0px auto;
+    display: block;
+   
+}
+
+.imagen_relleno{
+    background: #ccc;
+    width: 100%;
+    height: 200px;
+}
+

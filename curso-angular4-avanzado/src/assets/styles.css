@@ -1,0 +1,125 @@
+h3 a{
+    color:black;
+    text-decoration: none;
+}
+
+.navigation.col-lg-12{
+    margin-top: 10px;
+}
+
+.jumbotron{
+    padding:40px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 1px #ccc;
+}
+.pointer{
+    cursor: pointer;
+}
+.navbar-nav .active{
+    border-bottom: 3px solid orange !important;
+}
+
+.navbar-default .navbar-nav>li>a{
+    transition:all 300ms;
+    border-bottom: 3px solid transparent;
+}
+.navbar-default .navbar-nav>li>a:hover{
+    transition:all 300ms;
+    border-bottom: 3px solid orange;
+}
+
+.boton_transiciones{
+    padding: 10px;
+    background: red;
+    color: white;
+    border-radius: 20px;
+    border: 4px solid blue;
+    /*transition: all 2s;*/
+    transition: border 2s, border-radius 500ms, background 5s;
+    display: block;
+    width: 100px;
+}
+
+.boton_transiciones:hover{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 2px;
+    background: #ccc;
+    border: 1px solid red;
+}
+
+.caja_animada{
+    margin-top: 15px;
+    background: green;
+    border: 5px solid black;
+    width: 200px;
+    height: 200px;
+
+    /*
+    animation-name: deslizamiento;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;/*animacion infinita, no termina /*
+    */
+}
+
+@keyframes deslizamiento{
+    0% {  
+        margin-left: 0px;
+    } 
+    50%{
+        margin-left: 400px;
+        background: red;
+    }
+    100%{
+        margin-left: 0px;
+        background: yellow;
+    }
+}
+
+
+.image_for_edit img{
+    width: 60px;
+}
+
+.avatar{
+    width: 35px;
+    height: 35px;
+    border-radius: 700px;
+    overflow: hidden;
+    margin-top: 9px;
+    margin-right: 2px;
+}
+
+.avatar img{
+    height: 45px;
+}
+
+.animal-image-mask img,
+.keeper-image-mask img{
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+
+.animal-image-mask img,
+.keeper-image-mask{
+    max-height: 400 px;
+}
+
+.keeper-image-mask{
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+@keyframes deslizamiento1{
+    from {  
+        margin-left: 0px;
+    } 
+    to{
+        margin-left: 400px;
+        background: red;
+    }
+}

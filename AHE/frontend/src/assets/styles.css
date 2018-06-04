@@ -1,0 +1,276 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    background: #455a64 ;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+html {
+    font-family: 'Times New Roman', Times, serif !important; 
+    -ms-text-size-adjust: 100%;
+    /* -webkit-text-size-adjust: 100%; */
+}
+
+  main {
+    flex: 1 0 auto;
+  }
+
+
+ 
+
+.brand-logo{
+    margin-left: 10px;
+    background: -webkit-linear-gradient(red,yellow,red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: tomato;
+}
+
+
+.logo_ahe{
+    width: 48px;
+	height: 48px;
+	border-radius: 100px;
+	overflow: hidden;
+	margin-top: 8px;
+    margin-right: 2px;
+    margin-left: 10px;
+}
+
+.logo_footer{
+    width: 20%;
+	height: 20%;
+	border-radius: 100px;
+	overflow: hidden;
+	margin-top: 8px;
+    margin-right: 2px;
+    margin-left: 10px;
+}
+
+.titulo{
+    color:white;
+    text-align: center;
+    font-family: Regular;
+}
+
+.numSocio{
+    color:white;
+    text-align: center;
+    font-family: Regular;
+    margin-bottom: 30px;
+}
+
+.cabeceraSeccion{
+    text-align: center;
+    color:white;
+    font-family: Regular;
+}
+
+.caja_login{
+    margin-top: 10%;
+   
+    padding: 32px 48px 0px 48px;
+    
+   
+    
+}
+
+
+.input-field {
+    position: relative;
+    margin-top: 1rem;
+    color: #ffffff;
+}
+
+.aviso{
+    margin-left: 45px;
+    color: red;
+}
+
+
+
+.titulo1{
+    background: -webkit-linear-gradient(red,yellow,red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: tomato;
+    text-align: center;
+    font-family: Regular;
+}
+
+
+
+.navigation{
+    background-color: grey;
+}
+
+.toal{
+    background-color: red;
+}
+
+.sombra{
+    text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+    color: #f3840b;
+}
+.material-icons2 {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+    
+}
+
+.espacio{
+    margin-top: 40px;
+}
+
+.texto{
+    color:white;
+}
+
+.slider .indicators .indicator-item.active {
+    background-color: #f3840b !important;
+}
+
+.redes{
+    width: 9%;
+	height: 9%;
+}
+  
+.collection .collection-item.avatar {
+    min-height: 84px;
+    padding-left: 95px !important;
+    position: relative;
+}
+
+.collection .collection-item.avatar .secondary-content2 {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    margin-right: 60px;
+}
+
+
+
+.tabs {
+    position: relative;
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: 48px;
+    width: 100%;
+    background-color: transparent !important;
+    margin: 0 auto;
+    white-space: nowrap;
+}
+
+.collapsible-body {
+    display: none;
+    border-bottom: 1px solid #ddd;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 2rem;
+    background-color: #f3f3f3;
+}
+
+
+
+
+
+
+.num{
+        position: absolute;
+        width: 60px;
+        height: 42px;
+        overflow: hidden;
+        left: 15px;
+        display: inline-block;
+        vertical-align: middle;
+    
+}
+
+
+
+
+
+
+.calendario ul {overflow:auto;}
+ul.calendario {
+	
+	position:relative;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
+  top:15%;
+	background-color: #AB6161;
+	border-radius: 10px;
+	box-shadow:0 0 20px #000;
+	font-weight: bold;
+}
+ul.calendario>span {
+	color: #AB6161;
+	display: block;
+	text-align: center;
+	padding: 20px;
+	background-color: #fff;
+	border-radius: 10px 10px 0 0;
+	letter-spacing: 0.4em;
+	text-transform: uppercase;
+}
+
+
+.card-content{
+    color: black;
+}
+
+.card-title{
+    color: black;
+}
+
+
+
+.break-word {
+    word-break: break-all;
+}
+.botones{
+    text-align: right;
+}
+
+.letraEdit{
+    color: black;
+}
+
+.event-image-for-edit img{
+    height: 60px;
+    margin-left: 20px;
+}
+
+.color{
+    color:black;
+}

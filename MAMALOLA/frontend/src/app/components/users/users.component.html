@@ -1,0 +1,24 @@
+<h2 class="titulo">Usuarios</h2>
+
+<div class="row">
+    <div *ngFor="let user of users" class="col s10 offset-s1 m4 l2">
+      <div  class="card">
+        
+        <div class="card-image">
+          <img class="avatar-default" src="{{ url + 'get-image-user/' + user.image}}" *ngIf="user.image" />
+          <img class="avatar-default" src="../../assets/User.ico" *ngIf="!user.image">
+          <span class="card-title">{{user.name}}</span>
+          <div class="botones" *ngIf="identity && identity.role == 'ROLE_ADMIN'">
+          <a class="btn-floating halfway-fab waves-effect waves-light red" (click)="deleteUser(user._id)"><i class="material-icons" >delete_forever </i></a>
+         
+        </div>
+        </div>
+        <div class="card-content">
+            
+          <li>{{user.email}}</li>
+          <li>{{user.role}}</li>
+          
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,86 @@
+
+
+
+<div class="row">
+    <div class="col s2 m4"></div>
+      <div class="col s12 m4 caja_login ">
+            <h4 class="titulo">Registrar Usuario</h4>
+        
+        <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+            <div class='row'>
+                  <div class='input-field col s12'>
+                  <i class="material-icons prefix">account_circle</i>
+                  <input class='form-control' type="email" name="email" #email="ngModel" [(ngModel)]="user.email"  required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
+                  <label for='email'>email</label>
+                  <span class="valido" *ngIf="!email.valid && email.touched">
+                      El email no es correcto
+                  </span>
+                  </div>
+              </div>
+
+
+
+
+              <div class='row'>
+                <div class='input-field col s12'>
+                <i class="material-icons prefix">account_circle</i>
+                <input class='form-control' type="text"  name="name" #name="ngModel" [(ngModel)]="user.name"/>
+                <label for='name'>name</label>
+                <span class="valido" *ngIf="!name.valid && name.touched">
+                    El nombre no es correcto
+                </span>
+                </div>
+            </div>
+
+            <div class='row'>
+                <div class='input-field col s12'>
+                <i class="material-icons prefix">account_circle</i>
+                <input class='form-control' type="text" name="surname" #surname="ngModel" [(ngModel)]="user.surname" />
+                <label for='surname'>surname</label>
+                <span class="valido" *ngIf="!surname.valid && surname.touched">
+                    El apellido no es correcto
+                </span>
+                </div>
+            </div>
+  
+              <div class='row'>
+                  <div class='input-field col s12'>
+                  <i class="material-icons prefix">account_circle</i>
+                  <input type="email" name="nick" #nick="ngModel" [(ngModel)]="user.nick" class="form-control" required />
+                  <label for='text'>nick</label>
+                  </div>
+                  <span class="valido" *ngIf="!nick.valid && nick.touched">
+                      El nick es obligatorio
+                  </span>
+  
+              </div>
+
+              <div class='row'>
+                <div class='input-field col s12'>
+                <i class="material-icons prefix">vpn_key</i>
+                <input type="password" name="password" #password="ngModel" [(ngModel)]="user.password" class="form-control" required />
+                <label for='password'>password</label>
+                </div>
+                <span class="valido" *ngIf="!password.valid && password.touched">
+                    La contraseña es obligatoria
+                </span>
+
+            </div>
+  
+      <br />
+      
+          <div class='row'>
+  
+          <input type="submit" value="Entrar" class=" col s12 btn btn-large waves-effect blue" [disabled]="!loginForm.form.valid">
+          </div>
+      
+      </form>
+  
+      
+    
+  </div>
+  
+  </div>
+  
+ 
+ 

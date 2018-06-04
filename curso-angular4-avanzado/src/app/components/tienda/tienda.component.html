@@ -1,0 +1,84 @@
+<div class="col-lg-12" [@fadeIn]>
+    <a class="boton_activo btn btn-success" [@marcar]="status" (click)="cambiarEstado(status)">
+    <span *ngIf="status == 'inactive'">Boton inactivo</span>   
+    <span *ngIf="status == 'active'">Boton activo</span>  
+    </a>
+
+
+
+    <hr>
+    <h4>Animaciones CSS3</h4>
+    <a class="boton_transiciones">Transiciones</a>
+
+    <div class="clearfix"></div>
+
+    <div class="caja_animada">
+
+    </div>
+
+    <hr>
+    <h4>Utilizar jquery dentro de Angular</h4>
+    <button id="botonjq">Mostrar texto</button>
+    <p id="textojq" class="alert alert-warning">
+        Esto es solo un texto de prueba
+    </p>
+
+    <div id="caja" style="border:1px solid black; width:150px; height:50px">
+        Esto es solo un texto de prueba;Esto es solo un texto de prueba;
+        Esto es solo un texto de prueba;
+    </div>
+
+    <hr>
+
+
+    <simple-tiny
+    [elementId]="'descripcionTienda'"
+    (onEditorKeyup)="textoRichEditor($event)"
+    >
+    </simple-tiny>
+
+
+    Padre:
+    <h1>{{titulo}}</h1>
+    <ul>
+        <li>Camiseta rosa</li>
+        <li>Gorra negra</li>
+    </ul>
+
+    <hr/>
+
+    <p>
+    Nombre del parque:
+    <input type="text" [(ngModel)]="nombreDelParque" (keyup)="mostrarNombre()"/>
+    </p>
+    Resultado: {{nombreDelParque}}
+    <br/>
+
+
+    <div *ngIf="miParque">
+        <h4>Datos de miParque desde el hijo</h4>
+        <ol >
+            <li>{{miParque.nombre}}</li>
+            <li>{{miParque.metros}}</li>
+            <li>{{miParque.vegetacion}}</li>
+            <li>{{miParque.abierto}}</li>
+        </ol>
+    </div>
+
+    <hr>
+    <parques [nombre]="'Nombre por defecto'"
+            [metros]="589"
+            (pasameLosDatos)="verDatosparque($event)"></parques>
+
+
+
+    <hr>
+    <p *ngIf="nombreDelParque">
+    Hijo:
+    <parques [nombre]="nombreDelParque"
+            [metros]="567"
+            (pasameLosDatos)="verDatosParque($event)"
+            ></parques>
+    </p>
+
+</div>
